@@ -41,6 +41,9 @@
       ],
       "@slice/*": [
         "store/slice/*"
+      ],
+      "@api/*": [
+        "api/*"
       ]
     },
 

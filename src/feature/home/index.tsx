@@ -2,12 +2,13 @@ import React from 'react';
 import {FlatList, ListRenderItem} from 'react-native';
 import {CharacterCard} from '@components';
 import {useToggleFavourite} from '@hooks';
-import {Empty, ICharacter} from '@common';
+import {ContentLoader, Empty, ICharacter} from '@common';
 import {columnWrapperStyle, flex1} from '@globals';
 import {Container} from './styles';
-import data from './data.json';
+import {useCharacters} from './useCharacters';
 
 function Home() {
+  const {data, isLoading} = useCharacters();
   const {isFavourite, onToogle} = useToggleFavourite();
 
   const keyExtractor = (item: ICharacter, index: number) =>
@@ -21,7 +22,7 @@ function Home() {
     />
   );
 
-  const isCharacters = data.length > 0;
+  const isCharacters = (data || []).length > 0;
   return (
     <Container>
       <FlatList
@@ -32,6 +33,7 @@ function Home() {
         renderItem={renderCharacter}
         columnWrapperStyle={columnWrapperStyle}
         ListEmptyComponent={<Empty />}
+        ListHeaderComponent={<ContentLoader loading={isLoading} />}
       />
     </Container>
   );

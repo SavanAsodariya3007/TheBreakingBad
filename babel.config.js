@@ -13,6 +13,7 @@ module.exports = api => {
           '@store': './src/store',
           '@hooks': './src/hooks',
           '@slice': './src/store/slice',
+          '@api': './src/api',
         },
       },
     ],
