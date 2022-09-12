@@ -10,15 +10,19 @@ import {
   NickName,
   RightPart,
 } from './styles';
-import {FillheartIcon} from '@icons';
+import {FillheartIcon, HeartIcon} from '@icons';
 
 interface IProps {
   item: ICharacter;
+  isFav: boolean;
+  onToggleFav: (item: ICharacter) => void;
 }
 
 function CharacterCard(props: IProps) {
-  const {item} = props;
+  const {item, isFav, onToggleFav} = props;
   const {img, name, nickname} = item;
+
+  const onPress = () => onToggleFav?.(item);
 
   return (
     <Container>
@@ -30,8 +34,8 @@ function CharacterCard(props: IProps) {
           <CharacterName numberOfLines={1}>{name}</CharacterName>
           <NickName numberOfLines={1}>{nickname}</NickName>
         </LeftPart>
-        <RightPart>
-          <FillheartIcon />
+        <RightPart onPress={onPress}>
+          {isFav ? <FillheartIcon /> : <HeartIcon />}
         </RightPart>
       </BottomDetailContainer>
     </Container>

@@ -11,7 +11,7 @@
     "types": [
       "@types/styled-components-react-native",
     ],
-    "includes": ["styled-components.d.ts"],
+    
 
     "baseUrl": "./src/",
     "paths": {
@@ -33,7 +33,17 @@
       "@components": [
         "components"
       ],
+      "@store": [
+        "store"
+      ],
+      "@hooks": [
+        "hooks"
+      ],
+      "@slice/*": [
+        "store/slice/*"
+      ]
     },
 
-  }
+  },
+  "includes": ["styled-components.d.ts"],
 }
