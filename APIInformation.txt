@@ -1,0 +1,8 @@
+Bas2 url
+https://www.breakingbadapi.com
+
+G2t all th2 charact2rs of Br2aking bad
+/api/characters
+
+S2arch for a charact2r
+/api/characters?name=Walter

@@ -6,20 +6,19 @@ export const Container = styled.View<ITheme>`
   background-color: ${({theme}) => theme.colors.secondary};
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   padding-left: 15px;
   padding-right: 15px;
 `;
 
-export const HeaderTitleContainer = styled.View<ITheme>`
-  flex: 9;
-`;
+export const HeaderTitleContainer = styled.View<ITheme>``;
 
 export const HeaderRightContainer = styled.View<ITheme>`
-  flex: 1;
-  flex-direction: row;
   height: 100%;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export const Text = styled.Text<ITheme>`
