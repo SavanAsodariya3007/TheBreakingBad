@@ -22,9 +22,9 @@ jobs:
         uses: gradle/actions/wrapper-validation@v3
 
       - name: Install deps
-        run: |
-          npm install yarn
-          yarn install
+        uses: borales/actions-yarn@v5
+        with:
+          cmd: install
 
       - name: Version Bump
         uses: chkfung/android-version-actions@v1.2.3
